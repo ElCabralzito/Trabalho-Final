@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script type="text/javascript" src="./scripts/script.js"></script>
+		<script type="text/javascript" src="./scripts/dnd.js"></script>
+		<script type="text/javascript" src="./scripts/data.js"></script>
+		<script type="text/javascript" src="./scripts/grid.js"></script>
+		<script src="./scripts/sidebar.js"></script>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<title></title>
+	</head>
+	<body>
+		<div class="sidebarContainer">
+			<div class="sidebar">
+				<div
+					title="Adicionar Conteúdo"
+					class="btn sidebarBtn add disableSelection"
+					onclick="sidebarContent()"
+				>
+					<img src="./assets/icons/plus.svg" alt="add" />
+				</div>
+				<div
+					title="Todos"
+					class="btn sidebarBtn global"
+					onclick="renderGrid('all')"
+				></div>
+				<div
+					title="Jogos"
+					class="btn sidebarBtn games"
+					onclick="renderGrid('games')"
+				></div>
+				<div
+					title="Filmes"
+					class="btn sidebarBtn movies"
+					onclick="renderGrid('movies')"
+				></div>
+				<div
+					title="Livros"
+					class="btn sidebarBtn books"
+					onclick="renderGrid('books')"
+				></div>
+
+				<div title="Trash" class="btn sidebarBtn trash"></div>
+			</div>
+
+			<div class="sidebarContent sidebar">
+				<div class="addContent" onclick="addData(`book`)">
+					<span>Adicionar novo Livro</span>
+				</div>
+				<div class="addContent">
+					<span>Adicionar novo Jogo</span>
+				</div>
+				<div class="addContent" onclick="addData(`movie`)">
+					<span>Adicionar novo Filme</span>
+				</div>
+			</div>
+		</div>
+		<div class="mainContentContainer">
+			<h1 class="mainTitle"></h1>
+			<div class="cards"></div>
+		</div>
+	</body>
+</html>

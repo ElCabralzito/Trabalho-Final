@@ -1,0 +1,356 @@
+/* Basic Statement */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	background-color: #e4e4e4;
+}
+/* Utils */
+
+.disableSelection {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	outline: 0;
+}
+
+.highlight {
+	background-color: #ff8585;
+	background-image: url('./assets/icons/trash-whiter.svg') !important;
+
+	transition-duration: 300ms;
+}
+
+.highlight.over {
+	background-color: #3ff1ad;
+}
+
+/**==========================
+       Sidebar Section
+=============================*/
+
+.sidebarContainer {
+	z-index: 1000;
+}
+
+.sidebar {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	width: 60px;
+	height: calc(100% - 20px);
+
+	background-color: #f5f5f5;
+	border-radius: 10px;
+
+	display: grid;
+	grid-template-rows: repeat(5, 60px);
+	grid-template-columns: 60px;
+}
+
+.sidebarContent {
+	/* Change width on "scripts/script.js" -> function sidebarContent()*/
+	width: 0px;
+	left: 75px;
+	background-color: #f5f5f5;
+	display: flex;
+	flex-direction: column;
+	
+	overflow: hidden;
+	text-overflow: ellipsis;
+	transition-duration: 300ms;
+}
+
+.addContent {
+	height: 60px;
+	font-size: 22px;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #707070;
+	text-align: right;
+	display: flex;
+
+	
+}
+
+.addContent > span {
+	padding-right: 20px;
+	width: 100%;
+	text-align: right;
+}
+
+.addContent:hover {
+	background-color: #03002e;
+	color: white;
+
+	cursor: pointer;
+}
+
+.addContent > span {
+	margin: auto;
+}
+
+/**==========================
+        Button Component
+=============================*/
+
+.btn {
+	cursor: pointer;
+}
+
+/* Sidebar Button */
+.btn.sidebarBtn {
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 30px;
+}
+
+/* Add Button */
+.btn.add {
+	grid-row: 1;
+	border-radius: 5px 5px 0 0;
+	display: flex;
+	word-wrap: break-word;
+}
+
+.btn.add > img {
+	width: 35px;
+	height: 35px;
+	margin: auto;
+
+	transition-duration: 300ms;
+}
+
+.btn.add:hover {
+	background-color: rgb(255, 255, 255);
+}
+
+/* Global Button */
+.btn.global {
+	grid-row: 2;
+	background-image: url("./assets/icons/globe.svg");
+}
+
+.btn.global:hover {
+	border-radius: 0;
+	background-color: rgb(255, 255, 255);
+	background-image: url("./assets/icons/globe-hover.svg");
+}
+
+/* Games Button */
+.btn.games {
+	grid-row: 3;
+	background-image: url("./assets/icons/smiling-face.svg");
+}
+
+.btn.games:hover {
+	border-radius: 0;
+	background-color: rgb(255, 255, 255);
+	background-image: url("./assets/icons/smiling-face-hover.svg");
+}
+
+/* Movies Button */
+.btn.movies {
+	grid-row: 4;
+	background-image: url("./assets/icons/video.svg");
+}
+
+.btn.movies:hover {
+	border-radius: 0;
+	background-color: rgb(255, 255, 255);
+	background-image: url("./assets/icons/video-hover.svg");
+}
+
+/* Books Button */
+.btn.books {
+	grid-row: 5;
+	background-image: url("./assets/icons/book.svg");
+}
+
+.btn.books:hover {
+	border-radius: 0;
+	background-color: rgb(255, 255, 255);
+	background-image: url("./assets/icons/book-hover.svg");
+}
+
+/* Books Button */
+.btn.trash {
+	grid-row: 8;
+	background-image: url("./assets/icons/trash.svg");
+	transition-duration: 300ms;
+}
+
+.btn.trash:hover {
+	border-radius: 0 0 5px 5px;
+	background-color: rgb(255, 255, 255);
+	background-image: url("./assets/icons/trash-hover.svg");
+}
+
+.is-dragging{
+	cursor: move !important;
+	opacity: 0.3;
+}
+
+/**==========================
+        Main Content
+=============================*/
+
+.mainContentContainer {
+	position: fixed;
+	width: calc(100% - 85px);
+	height: calc(100% - 20px);
+	left: 75px;
+	top: 10px;
+}
+
+.mainContentContainer > h1 {
+	width: 100%;
+	height: 60px;
+	font-size: 36px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 60px;
+
+	text-align: center;
+
+	margin-left: 10px;
+
+	color: white;
+	text-shadow: 2px 2px black;
+}
+
+.cards {
+	width: 100%;
+	height: 100%;
+
+	overflow: scroll;
+	display: flex;
+	flex-flow: wrap;
+
+	align-items: center;
+	justify-content: center;
+}
+
+.card {
+	width: 250px;
+	height: 350px;
+	background-color: whitesmoke;
+	overflow: hidden;
+
+	
+
+	cursor: pointer;
+
+	margin: 10px;
+
+	box-shadow: 0 2px 2px -1px #03002e;
+}
+
+.card.book {
+	display: grid;
+	grid-template-columns: 10px 230px 10px;
+	grid-template-rows: 10px 200px 10px 20px 30px 40px 40px;
+}
+
+.card.book > img {
+	width: 100%;
+	height: 100%;
+	grid-row: 2;
+	grid-column: 2;
+}
+
+.card.book > h2 {
+	width: 100%;
+	height: 100%;
+	grid-row: 4;
+	grid-column: 2;
+	font-size: 18px;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.card.book > .year {
+	grid-row: 4;
+	grid-column: 2;
+	text-align: right;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 22px;
+}
+
+.card.book > .author {
+	grid-row: 5;
+	grid-column: 2;
+	text-align: left;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 20px;
+}
+
+.card.book > .company {
+	grid-row: 5;
+	grid-column: 2;
+	text-align: right;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 20px;
+}
+
+.card.book > .description {
+	border-top: solid 1px rgba(0, 0, 0, 0.185);
+	padding-top: 5px;
+	width: 100%;
+	height: 100%;
+	grid-row: 6;
+	grid-column: 2;
+	text-align: left;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+
+	overflow: hidden;
+
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 20px;
+}
+
+.card.book > .rate {
+	padding-top: 5px;
+	width: 100%;
+	height: 100%;
+	grid-row: 7;
+	grid-column: 2;
+	text-align: left;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 30px;
+}
+
+.card.book > .bk1 {
+	grid-row: 6;
+	grid-column: 2;
+}
+
+/* Color of Checked stars */
+.checked {
+	color: orange;
+}
