@@ -50,7 +50,7 @@ body {
 	border-radius: 10px;
 
 	display: grid;
-	grid-template-rows: repeat(5, 60px);
+	grid-template-rows: repeat(6, 60px);
 	grid-template-columns: 60px;
 }
 
@@ -181,6 +181,18 @@ body {
 	background-image: url("./assets/icons/book-hover.svg");
 }
 
+.btn.reset {
+	grid-row: 6;
+	background-image: url("./assets/icons/undo-outline.svg");
+}
+
+.btn.reset:hover {
+	border-radius: 0;
+	background-color: rgb(255, 255, 255);
+	background-image: url("./assets/icons/undo-hover.svg");
+}
+
+
 /* Books Button */
 .btn.trash {
 	grid-row: 8;
@@ -239,6 +251,21 @@ body {
 
 	align-items: center;
 	justify-content: center;
+}
+
+.card.green {
+	background-color: #008d57;
+	color: #e4e4e4;
+}
+
+.card.blue {
+	background-color: #03002e;
+	color: #e4e4e4;
+}
+
+.card.red {
+	background-color: #008d57;
+	color: #e4e4e4;
 }
 
 .card {
