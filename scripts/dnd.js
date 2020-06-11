@@ -1,3 +1,5 @@
+// Esta é a função responsavel pelo "Drag and Drop" da pagina.
+// Ela chama a função de deletar item quando o mesmo e "jogado" dentro da lixeira
 function dndReload() {
 	const cards = document.querySelectorAll(".card");
 

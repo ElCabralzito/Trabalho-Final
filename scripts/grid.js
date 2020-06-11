@@ -1,7 +1,10 @@
-// Function to render components on page
+// Função usada para renderizar os componentes na pagina
+// Ele tem 4 possiveis parametros, eles são usados para criar um filtro a rederizar os itens na pagina
+// Params: "books", "games", "movies" ou "all"
+// Ela é chamada pelos botões do Sidebar
 function renderGrid(param) {
 	// get local data storage
-    let data = JSON.parse(localStorage.getItem("data"));
+	let data = JSON.parse(localStorage.getItem("data"));
 	let Cards = document.querySelector(".cards");
 
 	let toRender = [];
@@ -23,24 +26,24 @@ function renderGrid(param) {
 			break;
 		default:
 			return;
-    }
+	}
 
 	// To clear old cards
 	Cards.innerHTML = "";
 
-    // This for chage page title
+	// This for chage page title
 	document.querySelector(".mainTitle").innerHTML = param
 		? param.toUpperCase()
 		: "ALL";
 
-    // this for render components
+	// this for render components
 	for (let i = 0; i < toRender.length; i++) {
-
 		let index = toRender[i];
+
 
 		index.map((data) => {
 			var element = document.createElement("div");
-			if (data === null) return
+			if (data === null) return;
 			element.insertAdjacentHTML(
 				"beforeend",
 				`
@@ -60,18 +63,35 @@ function renderGrid(param) {
 			</span>
 	
 			<div class="rate">
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star"></span>
-				<span class="fa fa-star"></span>
+				${
+					data.rate > 0
+						? '<span class="fa fa-star checked"></span>'
+						: '<span class="fa fa-star"></span>'
+				}
+				${
+					data.rate > 1
+						? '<span class="fa fa-star checked"></span>'
+						: '<span class="fa fa-star"></span>'
+				}${
+					data.rate > 2
+						? '<span class="fa fa-star checked"></span>'
+						: '<span class="fa fa-star"></span>'
+				}${
+					data.rate > 3
+						? '<span class="fa fa-star checked"></span>'
+						: '<span class="fa fa-star"></span>'
+				}${
+					data.rate > 4
+						? '<span class="fa fa-star checked"></span>'
+						: '<span class="fa fa-star"></span>'
+				}
 			</div>
 		</div>
 			`
 			);
 			Cards.appendChild(element);
 		});
-	}
 
-	
+		dndReload()
+	}
 }

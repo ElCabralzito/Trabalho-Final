@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<!-- Scripts da Pagina -->
 		<script type="text/javascript" src="./scripts/script.js"></script>
 		<script type="text/javascript" src="./scripts/dnd.js"></script>
 		<script type="text/javascript" src="./scripts/data.js"></script>
 		<script type="text/javascript" src="./scripts/grid.js"></script>
+		<script type="text/javascript" src="./scripts/actions.js"></script>
 		<script src="./scripts/sidebar.js"></script>
+
+		<!-- Configurações da pagina -->
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Link para a CDN das fontes do google -->
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 		/>
+		<!-- Linka para a folha de estilos -->
 		<link rel="stylesheet" href="style.css" />
-		<title></title>
+
+		<!-- Titulo da Pagina -->
+		<title>WebCoisas</title>
 	</head>
 	<body>
+		<!-- Essa é div que contém todos os controles do site -->
 		<div class="sidebarContainer">
+			<!-- Sidebar principal -->
 			<div class="sidebar">
+				<!-- Botão que abre o sidebar, e oferece as opções para adicionar novo conteúdo novo -->
 				<div
 					title="Adicionar Conteúdo"
 					class="btn sidebarBtn add disableSelection"
@@ -25,35 +37,55 @@
 				>
 					<img src="./assets/icons/plus.svg" alt="add" />
 				</div>
+
+				<!-- Este é o botão que remove todos os filtos -->
 				<div
 					title="Todos"
 					class="btn sidebarBtn global"
 					onclick="renderGrid('all')"
 				></div>
+
+				<!-- Botão que adiciona o filto de Games -->
 				<div
 					title="Jogos"
 					class="btn sidebarBtn games"
 					onclick="renderGrid('games')"
 				></div>
+
+				<!-- Botão que adiciona o filto de Filmes -->
 				<div
 					title="Filmes"
 					class="btn sidebarBtn movies"
 					onclick="renderGrid('movies')"
 				></div>
+
+				<!-- Botão que adiciona o filto de Livros -->
 				<div
 					title="Livros"
 					class="btn sidebarBtn books"
 					onclick="renderGrid('books')"
 				></div>
 
-				<div title="Trash" class="btn sidebarBtn trash"></div>
+				<!-- Botão que reseta os dados do site -->
+				<div
+					title="Reset Data"
+					class="btn sidebarBtn reset"
+					onclick="resetData()"
+				></div>
+
+				<!-- Sessão onde pode apagar contúdo do site... basta arrastar e soltar  -->
+				<div
+					title="Arraste aqui o que quiser apagar."
+					class="btn sidebarBtn trash"
+				></div>
 			</div>
 
+			<!-- Opções apresentadas ao abrir a sidebar no botão  de adicionar -->
 			<div class="sidebarContent sidebar">
 				<div class="addContent" onclick="addData(`book`)">
 					<span>Adicionar novo Livro</span>
 				</div>
-				<div class="addContent">
+				<div class="addContent" onclick="addData(`game`)">
 					<span>Adicionar novo Jogo</span>
 				</div>
 				<div class="addContent" onclick="addData(`movie`)">
@@ -61,6 +93,8 @@
 				</div>
 			</div>
 		</div>
+
+		<!-- Aqui fica o conteudo da pagina, ele é adicionado pelos Scripts -->
 		<div class="mainContentContainer">
 			<h1 class="mainTitle"></h1>
 			<div class="cards"></div>
