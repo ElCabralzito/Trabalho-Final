@@ -50,7 +50,7 @@ body {
 	border-radius: 10px;
 
 	display: grid;
-	grid-template-rows: repeat(6, 60px);
+	grid-template-rows: repeat(7, 60px);
 	grid-template-columns: 60px;
 }
 
@@ -192,6 +192,17 @@ body {
 	background-image: url("./assets/icons/undo-hover.svg");
 }
 
+.btn.about {
+	grid-row: 7;
+	background-image: url("./assets/icons/question.svg");
+}
+
+.btn.about:hover {
+	border-radius: 0;
+	background-color: rgb(255, 255, 255);
+	background-image: url("./assets/icons/question-mark-outline.svg");
+}
+
 
 /* Books Button */
 .btn.trash {
@@ -226,9 +237,8 @@ body {
 .mainContentContainer > h1 {
 	width: 100%;
 	height: 60px;
-	font-size: 36px;
+	font-size: 25px;
 	font-family: Arial, Helvetica, sans-serif;
-	font-weight: bold;
 	display: inline-block;
 	vertical-align: middle;
 	line-height: 60px;
@@ -237,15 +247,14 @@ body {
 
 	margin-left: 10px;
 
-	color: white;
-	text-shadow: 2px 2px black;
+	color: #383838;
 }
 
 .cards {
 	width: 100%;
-	height: 100%;
+	margin-top:20px;
+	overflow-y: scroll;
 
-	overflow: scroll;
 	display: flex;
 	flex-flow: wrap;
 
@@ -380,4 +389,74 @@ body {
 /* Color of Checked stars */
 .checked {
 	color: orange;
+}
+
+/* Página sobre*/
+
+#aboutTitle{
+
+margin:8px;
+font-family: Arial, Helvetica, sans-serif;
+text-align:center;
+color:rgb(247, 139, 31);
+text-shadow: 1px 0px 1px rgb(0, 85, 148);
+}
+#aboutDescription{
+margin-top:7px;
+font-family: Arial, Helvetica, sans-serif;	
+text-align:center;
+color:rgb(0, 85, 148);
+}
+#box{
+margin:auto;
+height:500px;
+width:500px;
+background-color: rgb(200, 200, 200);
+border-radius:5%;
+border-style:solid;
+border-color:rgb(253, 253, 253);
+}
+#divBox{
+position:flex;
+}
+#lineAbout{
+margin-top:7px;
+color: grey;
+}
+#homeIcon, a{
+margin:auto;
+width:45px;
+height:45px;
+color: white;
+transition-duration: 1s
+}
+
+#homeIcon:hover{
+margin:auto;
+width:60px;
+height:60px;
+transition-duration: 1s
+}
+#logosenac{
+position:flex;
+margin-top:40px;
+margin-left:125px;
+width:250px;
+}
+#help,#help1{
+margin-top:10px;
+color:grey;
+font-family: Arial, Helvetica, sans-serif;
+text-align:center;
+}
+
+.lgo {
+	width: 100%;
+	height: 60px;
+	display: flex;
+}
+
+.lgo > img {
+	height: 100%;
+	margin: auto;
 }

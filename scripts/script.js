@@ -4,7 +4,6 @@ function main() {
 	}
 
 	renderGrid("all");
-
 	dndReload()
 }
 
