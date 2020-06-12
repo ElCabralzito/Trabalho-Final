@@ -3,8 +3,6 @@
 function dndReload() {
 	const cards = document.querySelectorAll(".card");
 
-	console.log(cards);
-
 	const dropzones = document.querySelectorAll(".trash");
 
 	cards.forEach((card) => {

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 	<head>
 		<!-- Scripts da Pagina -->
 		<script type="text/javascript" src="./scripts/script.js"></script>
 		<script type="text/javascript" src="./scripts/dnd.js"></script>
 		<script type="text/javascript" src="./scripts/data.js"></script>
-		<script type="text/javascript" src="./scripts/grid.js"></script>
 		<script type="text/javascript" src="./scripts/actions.js"></script>
 		<script src="./scripts/sidebar.js"></script>
 
@@ -22,7 +21,7 @@
 		<link rel="stylesheet" href="style.css" />
 
 		<!-- Titulo da Pagina -->
-		<title>WebCoisas</title>
+		<title>WebNotez</title>
 	</head>
 	<body>
 		<!-- Essa é div que contém todos os controles do site -->
@@ -66,6 +65,14 @@
 					onclick="renderGrid('books')"
 				></div>
 
+				<!-- Botão que vai para a guia about -->
+				<div
+					title="Sobre"
+					class="btn sidebarBtn about"
+					onclick="goToAbout()"
+				></div>
+
+
 				<!-- Botão que reseta os dados do site -->
 				<div
 					title="Reset Data"
@@ -96,7 +103,12 @@
 
 		<!-- Aqui fica o conteudo da pagina, ele é adicionado pelos Scripts -->
 		<div class="mainContentContainer">
+			<div class="lgo">
+				<img src="./assets/logo/unknown.png" alt="Logo" srcset="">
+			</div>
 			<h1 class="mainTitle"></h1>
+			<h3 id="help">Clique no item para edita-lo.</h3>
+			<h3 id="help1">Arraste o item para a lixeira para excluí-lo.</h3>
 			<div class="cards"></div>
 		</div>
 	</body>
